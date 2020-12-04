@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pusat Oleh-Oleh Lampung</title>
+  <title>Daftar Toko</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -26,6 +26,10 @@
 
   <!-- Template Main CSS File -->
   <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   <!-- =======================================================
   * Template Name: Squadfree - v2.2.0
@@ -54,23 +58,23 @@
             <ul>
 			  <li class="drop-down"><a href="#">Berdasarkan Pembayaran</a>
 				<ul>
-					<li><a href="<?= base_url('Daftar')?>">Online</a></li>
-					<li><a href="<?= base_url('Daftar')?>">Biasa</a></li>
+					<li><a href="#">Online</a></li>
+					<li><a href="#">Biasa</a></li>
 					</ul>
 			</li>
 				
               <li class="drop-down"><a href="#">Berdasarkan Jenis Oleh-oleh</a>
                 <ul>
-                  <li><a href="<?= base_url('Daftar')?>">Makanan</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Minuman</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Suvenir</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Pakaian</a></li>
+                  <li><a href="#">Makanan</a></li>
+                  <li><a href="#">Minuman</a></li>
+                  <li><a href="#">Suvenir</a></li>
+                  <li><a href="#">Pakaian</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base_url('Daftar')?>">Semua</a></li>
+              <li><a href="#">Semua</a></li>
             </ul>
           </li>
-          <li><a href="<?= base_url('Contact')?>">Contact Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -78,139 +82,45 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="fade-up">
-      <h1>Selamat Datang</h1>
-      <h2>Mejuah-juah</h2>
-      <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    
-
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+  <!-- Awal List -->
+<div class="clearfix"></div>
+  <section class="search-box">
+    <div class="container-fluid">
+	    <div class="row">
+      <div  class="col-sm-12 col-md-5 col-lg-5">
+          <div class="col-md-12 listing-block">
+            <ul class="list-group">
+              <?php 
+                $no = 1;
+                foreach ($toko as $t){
+                  $lt = str_replace(',','.',$t->lat);
+                  $lg = str_replace(',','.',$t->long);
+              ?>
+              <li  class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                    <a href="https://www.google.com/maps/dir//<?= $lt ?>,<?= $lg ?>" target="_blank">
+                      <h4><?php echo $t->nmtoko; ?></h4>
+                    </a>
+                    <h5><?= $t->alamat?></h5>
+                    <p><?= $t->jadwal?></p>
+                  </div> 
+                  <img col='col-md-4' src="<?= base_url('assets/img/'.$t->pic) ?>" style="height:100px; width:auto;" alt=""> 
+                  </div>
+              </li>
+            <?php $no++; } ?>
             </ul>
           </div>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
+        <div class="col-sm-12 col-md-6 col-lg-6 map-box mx-0 px-0">
+            <iframe width="100%" height="495" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/u/0/embed?mid=1i38WZdauP_TZA0BVYBYhKPFTfs38W14W"></iframe>
         </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    
-
+	    </div>
+    </div>
+  </section>
+</div>
+<!-- Akhir List -->
+  
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -304,6 +214,15 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+    <script>
+        $(function(){
+        $('.listing-block').slimScroll({
+            height: '500px'
+        });
+    });
+    </script>
 
 </body>
 
