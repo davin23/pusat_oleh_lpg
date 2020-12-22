@@ -54,17 +54,17 @@
             <ul>
 			  <li class="drop-down"><a href="#">Berdasarkan Pembayaran</a>
 				<ul>
-					<li><a href="<?= base_url('Daftar')?>">Online</a></li>
-					<li><a href="<?= base_url('Daftar')?>">Biasa</a></li>
+					<li><a href="<?= base_url('DaftarOnline')?>">Online</a></li>
+					<li><a href="<?= base_url('DaftarCash')?>">Biasa</a></li>
 					</ul>
 			</li>
 				
               <li class="drop-down"><a href="#">Berdasarkan Jenis Oleh-oleh</a>
                 <ul>
-                  <li><a href="<?= base_url('Daftar')?>">Makanan</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Minuman</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Suvenir</a></li>
-                  <li><a href="<?= base_url('Daftar')?>">Pakaian</a></li>
+                  <li><a href="<?= base_url('DaftarMakanan')?>">Makanan</a></li>
+                  <li><a href="<?= base_url('DaftarMinuman')?>">Minuman</a></li>
+                  <li><a href="<?= base_url('DaftarSuvenir')?>">Suvenir</a></li>
+                  <li><a href="<?= base_url('DaftarPakaian')?>">Pakaian</a></li>
                 </ul>
               </li>
               <li><a href="<?= base_url('Daftar')?>">Semua</a></li>
@@ -82,7 +82,7 @@
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
       <h1>Selamat Datang</h1>
-      <h2>Mejuah-juah</h2>
+      <h2>Tabik Pun!</h2>
       <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
     </div>
   </section><!-- End Hero -->
@@ -116,7 +116,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/IMG_0360.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
@@ -126,7 +126,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/IMG_0408.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>

@@ -54,23 +54,23 @@
             <ul>
 			  <li class="drop-down"><a href="#">Berdasarkan Pembayaran</a>
 				<ul>
-					<li><a href="#">Online</a></li>
-					<li><a href="#">Biasa</a></li>
+					<li><a href="<?= base_url('DaftarOnline')?>">Online</a></li>
+					<li><a href="<?= base_url('DaftarCash')?>">Biasa</a></li>
 					</ul>
 			</li>
 				
               <li class="drop-down"><a href="#">Berdasarkan Jenis Oleh-oleh</a>
                 <ul>
-                  <li><a href="#">Makanan</a></li>
-                  <li><a href="#">Minuman</a></li>
-                  <li><a href="#">Suvenir</a></li>
-                  <li><a href="#">Pakaian</a></li>
+                  <li><a href="<?= base_url('DaftarMakanan')?>">Makanan</a></li>
+                  <li><a href="<?= base_url('DaftarMinuman')?>">Minuman</a></li>
+                  <li><a href="<?= base_url('DaftarSuvenir')?>">Suvenir</a></li>
+                  <li><a href="<?= base_url('DaftarPakaian')?>">Pakaian</a></li>
                 </ul>
               </li>
-              <li><a href="#">Semua</a></li>
+              <li><a href="<?= base_url('Daftar')?>">Semua</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="<?= base_url('Contact')?>">Contact Us</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
