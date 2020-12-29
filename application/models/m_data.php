@@ -34,5 +34,10 @@ class M_data extends CI_Model{
 		$hasil=$this->db->get('table1')->result();
 		return $hasil;
 	}
+
+	function cek_login($table, $where)
+	{
+		return $this->db->get_where($table,$where);
+	}
 }
 
