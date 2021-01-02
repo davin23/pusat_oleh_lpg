@@ -39,5 +39,20 @@ class M_data extends CI_Model{
 	{
 		return $this->db->get_where($table,$where);
 	}
+
+	function hapus($id){
+		$query = $this->db->query('DELETE FROM table1 WHERE UID =' . $id . ';');
+		return $query;
+	}
+
+	function tambah($data, $table){
+		$this->db->insert($table, $data);
+	}
+
+	function edit($where, $data)
+	{
+		$this->db->where($where);
+		$this->db->update('table1',$data);
+	}
 }
 

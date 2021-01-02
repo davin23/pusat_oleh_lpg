@@ -1,18 +1,3 @@
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <title>Dashboard</title>
   <!-- Favicon -->
   <link rel="icon" href="<?= base_url('assets/dashboard') ?>/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
@@ -41,7 +26,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="<?= base_url() ?>/dashboard/dashboard">
-          <img src="<?= base_url('assets/dashboard') ?>/img/brand/blue.png" class="navbar-brand-img" alt="...">
+          <h1>Dashboard</h1>
         </a>
       </div>
       <div class="navbar-inner">
@@ -136,9 +121,8 @@
                           <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                          <a class="dropdown-item" data-toggle="modal" data-target="#modal_edit<?= $t->UID ?>" href="#">Edit</a>
+                          <a class="dropdown-item" data-toggle="modal" data-target="#modal_hapus<?= $t->UID ?>" href="#">Hapus</a>
                         </div>
                       </div>
                     </td>
@@ -147,8 +131,100 @@
                 </tbody>
               </table>
             </div>
+            <!-- Modal Edit -->
+            <?php foreach($toko as $t){ ?>
+              <div class="modal fade bd-example-modal-lg" id="modal_edit<?= $t->UID?>" tabindex="-1" role="dialog" >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit Data Toko</h5>
+                      <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body centered center">
+                      <form method="post" action=<?= base_url('dashboard/dashboard/edit') ?> enctype="multipart/form-data">
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <img src="<?= base_url('assets/img/'.$t->pic); ?>" alt="" style="width:20%;height:auto;" srcset="">
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-username">Nama Toko</label>
+                                <input type="text" id="nama" name="nama" class="form-control" value="<?= $t->nmtoko ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Alamat</label>
+                                <input type="text" id="input-first-name" name="alamat" class="form-control" value="<?= $t->alamat ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Jadwal</label>
+                                <input type="text" id="input-first-name" name="jadwal" class="form-control" value="<?= $t->jadwal ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Website</label>
+                                <input type="text" id="input-first-name" name="website" class="form-control" value="<?= $t->web ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Contact</label>
+                                <input type="text" id="input-first-name" name="kontak" class="form-control" value="<?= $t->cp ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Metode Pembayaran</label>
+                                <input type="text" id="input-first-name" name="metode" class="form-control" value="<?= $t->bayar ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Jenis Oleh-oleh</label>
+                                <input type="text" id="input-first-name" name="jenis" class="form-control" value="<?= $t->jenis ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Latitude</label>
+                                <input type="text" id="input-first-name" name="lat" class="form-control" value="<?= $t->lat ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name">Longitude</label>
+                                <input type="text" id="input-first-name" name="long" class="form-control" value="<?= $t->long ?>" >
+                                <br>
+                                <label class="form-control-label" for="input-first-name"> Masukkan Gambar Toko</label>
+                                <input type="file" name="gambar" id="gambar" class="btn btn-secondary">
+                                <input name="gambar_lama" type="hidden" value="<?= $t->pic ?>">
+                                <input name="id" type="hidden" value="<?= $t->UID ?>">
+                                <br>
+                                <br>
+                                <textarea name="deskripsi" id="" cols="30" rows="10" value="<?= $t->deskripsi ?>"></textarea>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Ubah</button>
+                              </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php } ?>
+            <!-- Akhir modal edit -->
+            <!-- Modal Hapus -->
+            <?php foreach ($toko as $t) { ?>
+              <div class="modal fade" id="modal_hapus<?= $t->UID?>" tabindex="-1" role="dialog" >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Hapus</h5>
+                      <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Apakah Anda Yakin ?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismis="modal">Batal</button>
+                      <a href="<?= base_url('dashboard/dashboard/hapus/'.$t->UID.'/'.$t->nmtoko)?>"><button type="button" class="btn btn-primary">Hapus</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php } ?>
+            <!-- Akhir Modal Hapus -->
+
             <!-- Card footer -->
-            <div class="card-footer py-4">
+            <!-- <div class="card-footer py-4">
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mb-0">
                   <li class="page-item disabled">
@@ -175,29 +251,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Footer -->
       <footer class="footer pt-0">
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
-            <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
           </div>
           <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
             </ul>
           </div>
         </div>
