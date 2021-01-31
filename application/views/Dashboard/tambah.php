@@ -25,7 +25,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="<?= base_url() ?>/dashboard/dashboard">
-          <img src="<?= base_url('assets/dashboard') ?>/img/brand/blue.png" class="navbar-brand-img" alt="...">
+          <h1>Dashboard</h1>
         </a>
       </div>
       <div class="navbar-inner">

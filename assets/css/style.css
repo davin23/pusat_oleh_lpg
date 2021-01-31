@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+  color: #cd5c5c;
   text-decoration: none;
 }
 
@@ -1391,6 +1391,8 @@ section {
   transition: 0.3s;
   border-radius: 4;
 }
+
+
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
   background: #409cc5;

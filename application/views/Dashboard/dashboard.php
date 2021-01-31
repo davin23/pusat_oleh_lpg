@@ -184,7 +184,7 @@
                                 <input name="id" type="hidden" value="<?= $t->UID ?>">
                                 <br>
                                 <br>
-                                <textarea name="deskripsi" id="" cols="30" rows="10" value="<?= $t->deskripsi ?>"></textarea>
+                                <textarea name="deskripsi" id="" cols="30" rows="10" value=""><?= $t->deskripsi ?></textarea>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Ubah</button>
                               </div>
